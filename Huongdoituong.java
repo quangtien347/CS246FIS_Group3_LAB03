@@ -18,6 +18,7 @@ public class Huongdoituong extends Person{
         a.eat(" Rice");
         int age =a.getAge();
         System.out.println("His age:"+age);
+        Huongdoituong b= new Huongdoituong("duy", 20, 1.76f);
     }
     
 }
