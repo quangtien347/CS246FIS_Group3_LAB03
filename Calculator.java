@@ -582,7 +582,7 @@ public class Calculator extends Activity implements OnClickListener{
 			screenAns.setText(textAns);
 			screenMath.setText("|");		
 		}
-		if (id = R.id.clear){
+		if (id == R.id.clear){
 			if (screenMath.length()>0){
 				char c = textMath.charAt(textMath.length()-1);
 				if (textMath.length() > 1 && c == '(' && textMath.charAt(textMath.length()-2) == '^'){
