@@ -606,7 +606,7 @@ public class Calculator extends Activity implements OnClickListener{
 		}
 		if (id == R.id.help){
 			Intent intent = new Intent(getApplicationContext(), CalculatorHelp.class);
-			startActivity(intent)
+			startActivity(intent);
 		}
 	}
 }
