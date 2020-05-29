@@ -350,5 +350,266 @@ public class Calculator extends Activity implements OnClickListener{
 		btHelp.setOnClickListener(this);
 	}
 
+	
+	@Override
+    public void onClick(View v) { 
+		int id = v.getId();
+		String elementMath[] = null;
+		
+		if (id == R.id.num0){
+			if (screenTextMath.length()<48) {	//neu bieu thuc nhap vao <48 ky tu
+				if (checkSubmit == 1) { screenTextMath = textMath = ""; checkSubmit = 0; }
+				textMath += "0";
+				screenTextMath += "0";
+			}			
+			screenMath.setText(screenTextMath);
+		}
+		if (id == R.id.num1){
+			if (screenTextMath.length()<48) {
+				if (checkSubmit == 1) { screenTextMath = textMath = ""; checkSubmit = 0; }
+				textMath += "1";
+				screenTextMath += "1";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		if (id == R.id.num2){
+			if (screenTextMath.length()<48) {
+				if (checkSubmit == 1) { screenTextMath = textMath = ""; checkSubmit = 0; }
+				textMath += "2";
+				screenTextMath += "2";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		if (id == R.id.num3){
+			if (screenTextMath.length()<48) {
+				if (checkSubmit == 1) { screenTextMath = textMath = ""; checkSubmit = 0; }
+				textMath += "3";
+				screenTextMath += "3";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		if (id == R.id.num4){
+			if (screenTextMath.length()<48) {
+				if (checkSubmit == 1) { screenTextMath = textMath = ""; checkSubmit = 0; }
+				textMath += "4";
+				screenTextMath += "4";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		if (id == R.id.num5){
+			if (screenTextMath.length()<48) {
+				if (checkSubmit == 1) { screenTextMath = textMath = ""; checkSubmit = 0; }
+				textMath += "5";
+				screenTextMath += "5";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		if (id == R.id.num6){
+			if (screenTextMath.length()<48) {
+				if (checkSubmit == 1) { screenTextMath = textMath = ""; checkSubmit = 0; }
+				textMath += "6";
+				screenTextMath += "6";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		if (id == R.id.num7){
+			if (screenTextMath.length()<48) {
+				if (checkSubmit == 1) { screenTextMath = textMath = ""; checkSubmit = 0; }
+				textMath += "7";
+				screenTextMath += "7";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		if (id == R.id.num8){
+			if (screenTextMath.length()<48) {
+				if (checkSubmit == 1) { screenTextMath = textMath = ""; checkSubmit = 0; }
+				textMath += "8";
+				screenTextMath += "8";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		if (id == R.id.num9){
+			if (screenTextMath.length()<48) {
+				if (checkSubmit == 1) { screenTextMath = textMath = ""; checkSubmit = 0; }
+				textMath += "9";
+				screenTextMath += "9";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		if (id == R.id.dot){
+			if (screenTextMath.length()<48) {
+				if (checkSubmit == 1) { screenTextMath = textMath = ""; checkSubmit = 0; }
+				if (textMath.equals("")) textMath += "0";
+				textMath += ".";
+				screenTextMath += ".";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		if (id == R.id.pi){
+			if (screenTextMath.length()<48) {
+				if (checkSubmit == 1) { screenTextMath = textMath = ""; checkSubmit = 0; }
+				textMath += "π";
+				screenTextMath += "π";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		if (id == R.id.add){
+			if (screenTextMath.length()<48) {
+				if (checkSubmit == 1) { checkSubmit = 0; }
+				textMath += "+";
+				screenTextMath += "+";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		if (id == R.id.minus){
+			if (screenTextMath.length()<48) {
+				if (checkSubmit == 1) { checkSubmit = 0; }
+				textMath += "-";
+				screenTextMath += "-";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		if (id == R.id.multiply){
+			if (screenTextMath.length()<48 && screenTextMath.length() > 0) {
+				if (checkSubmit == 1) { checkSubmit = 0; }
+				textMath += "*";
+				screenTextMath += "*";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		if (id == R.id.dived){
+			if (screenTextMath.length()<48 && screenTextMath.length() > 0) {
+				if (checkSubmit == 1) { checkSubmit = 0; }
+				textMath += "/";
+				screenTextMath += "/";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		
+		if (id == R.id.pow){ //luy thua
+			if (screenTextMath.length()<48 && screenTextMath.length() > 0) {
+				if (checkSubmit == 1) { checkSubmit = 0; }
+				textMath += "^(";
+				screenTextMath += "^(";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		
+		if (id == R.id.sqrt){ // can bac 2
+			if (screenTextMath.length()<48) {
+				if (checkSubmit == 1) { screenTextMath = textMath = ""; checkSubmit = 0; }
+				textMath += "@";
+				screenTextMath +="√";
+			}			
+			screenMath.setText(screenTextMath);
+		}
+		
+		if (id == R.id.sin){ // sin
+			if (screenTextMath.length()<48) {
+				if (checkSubmit == 1) { screenTextMath = textMath = ""; checkSubmit = 0; }
+				textMath += "s(";
+				screenTextMath +="Sin(";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		
+		if (id == R.id.cosin){ // cos
+			if (screenTextMath.length()<48) {
+				if (checkSubmit == 1) { screenTextMath = textMath = ""; checkSubmit = 0; }
+				textMath += "c(";
+				screenTextMath +="Cos(";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		
+		if (id == R.id.tan){ //tan
+			if (screenTextMath.length()<48) {
+				if (checkSubmit == 1) { screenTextMath = textMath = ""; checkSubmit = 0; }
+				textMath += "t(";
+				screenTextMath +="Tan(";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		
+		if (id == R.id.factorial){ //luy thua
+			if (screenTextMath.length()<48) {
+				if (checkSubmit == 1) { screenTextMath = textMath = ""; checkSubmit = 0; }
+				textMath += "!";
+				screenTextMath +="!";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		
+		if (id == R.id.open){
+			if (textMath.length()<48) {
+				if (checkSubmit == 1) { checkSubmit = 0; }
+				textMath += "(";
+				screenTextMath +="(";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		
+		if (id == R.id.close){
+			if (textMath.length()<48 && textMath.length() > 0) {
+				textMath += ")";
+				screenTextMath +=")";
+			}
+			screenMath.setText(screenTextMath);
+		}
+		if (id == R.id.percent){ 	// phan tram
+			if (screenTextMath.length() == 0) screenTextMath = "0";
+			screenTextMath = "(" + screenTextMath + ")%";
+			screenMath.setText(screenTextMath);			
+			if (checkSubmit == 0) submit(elementMath);
+			textMath = textAns + "/100";
+			submit(elementMath);
+		}
+		if (id == R.id.inverse){ 	// nghich dao
+			if (screenTextMath.length() == 0) screenTextMath = "0";
+			screenTextMath = "1/(" + screenTextMath + ")";
+			screenMath.setText(screenTextMath);		
+			if (checkSubmit == 0) submit(elementMath);
+			textMath = "1/" + textAns;
+			submit(elementMath);
+		}
+		if (id == R.id.submit){
+			submit(elementMath);
+		}
+		if (id == R.id.reset){
+			textMath = "";
+			screenTextMath = "";
+			textAns = "0";
+			screenAns.setText(textAns);
+			screenMath.setText("|");		
+		}
+		if (id = R.id.clear){
+			if (screenMath.length()>0){
+				char c = textMath.charAt(textMath.length()-1);
+				if (textMath.length() > 1 && c == '(' && textMath.charAt(textMath.length()-2) == '^'){
+					screenTextMath = screenTextMath.substring(0,screenTextMath.length()-2);
+					textMath = textMath.substring(0,textMath.length()-2);
+				}
+				else if (textMath.length() > 1 && c == '(' && (textMath.charAt(textMath.length()-2) == 's' || textMath.charAt(textMath.length()-2) == 'c' || textMath.charAt(textMath.length()-2) == 't') ){
+					textMath = textMath.substring(0,textMath.length()-2);
+					screenTextMath = screenTextMath.substring(0,screenTextMath.length()-4);
+				}
+				else {
+					textMath = textMath.substring(0,textMath.length()-1);
+					screenTextMath = screenTextMath.substring(0,screenTextMath.length()-1);
+				}
+			}
+			screenMath.setText(screenTextMath);	
+		}
+		if (id == R.id.about){
+			Intent intent = new Intent(getApplicationContext(), CalculatorAbout.class);
+			startActivity(intent);
+		}
+		if (id == R.id.help){
+			Intent intent = new Intent(getApplicationContext(), CalculatorHelp.class);
+			startActivity(intent)
+		}
+	}
+}
+}
 
 
