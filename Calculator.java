@@ -209,6 +209,141 @@ class InfixToPostfix{
 		return NumToString(S.pop());
 	}
 }
+public class Calculator extends Activity implements OnClickListener{
+	String textMath = "", textAns = "0", screenTextMath = "";
+	double num1 = 0, num2 = 0, ans = 0;
+	char dau = ' ';
+	int checkSubmit = 0;
+	TextView screenAns, screenMath;
+	Button bt0, bt1, bt2, bt3, bt4, bt5, bt6, bt7, bt8, bt9, btDot, btPi, btAdd, btMinus, btMultiply, btDived, btSqrt, 
+	btPercent, btInverse, btSubmit, btReset, btClear, btBack, btOpen, btClose,btSin, btCosin, btTan, btPow, 
+	btFactorial, btAbout, btHelp;
+	
+	/*Add : cong, Minus :tru, Multiply: nhan, Dived : chia, Percent : phan tram, Sqrt: can, inverse : nghich dao,
+	 Submit : gui, Facetorial giai thua*/
+	
+	public void submit(String[] elementMath){
+		InfixToPostfix  ITP = new InfixToPostfix();
+		if (textMath.length()>0){
+			try{
+				if (!ITP.check_error) elementMath = ITP.processString(textMath);		//	tach bieu thuc thanh cac phan tu
+				if (!ITP.check_error) elementMath = ITP.postfix(elementMath);		// 	dua cac phan tu ve dang postfix
+				if (!ITP.check_error) textAns = ITP.valueMath(elementMath);		//lay gia tri
+				screenAns.setText(textAns);
+				textMath = textAns;
+				screenTextMath = textAns;
+				checkSubmit = 1;	
+			}catch(Exception e){
+				error();
+			}
+			if (ITP.check_error) error();
+		}
+	}
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_calculator);
+		
+		screenAns = (TextView) findViewById(R.id.screenAns);
+		screenMath = (TextView) findViewById(R.id.screenMath);
+		
+		bt0 = (Button) findViewById(R.id.num0);
+		bt0.setOnClickListener(this);
+		
+		bt1 = (Button) findViewById(R.id.num1);
+		bt1.setOnClickListener(this);
+		
+		bt2 = (Button) findViewById(R.id.num2);
+		bt2.setOnClickListener(this);
+		
+		bt3 = (Button) findViewById(R.id.num3);
+		bt3.setOnClickListener(this);
+		
+		bt4 = (Button) findViewById(R.id.num4);
+		bt4.setOnClickListener(this);
+		
+		bt5 = (Button) findViewById(R.id.num5);
+		bt5.setOnClickListener(this);
+		
+		bt6 = (Button) findViewById(R.id.num6);
+		bt6.setOnClickListener(this);
+		
+		bt7 = (Button) findViewById(R.id.num7);
+		bt7.setOnClickListener(this);
+		
+		bt8 = (Button) findViewById(R.id.num8);
+		bt8.setOnClickListener(this);
+		
+		bt9 = (Button) findViewById(R.id.num9);
+		bt9.setOnClickListener(this);
+		
+		btDot = (Button) findViewById(R.id.dot);
+		btDot.setOnClickListener(this);
+		
+		btPi = (Button) findViewById(R.id.pi);
+		btPi.setOnClickListener(this);
+		
+		btAdd = (Button) findViewById(R.id.add);
+		btAdd.setOnClickListener(this);
+		
+		btMinus = (Button) findViewById(R.id.minus);
+		btMinus.setOnClickListener(this);
+		
+		btSubmit = (Button) findViewById(R.id.submit);
+		btSubmit.setOnClickListener(this);
+		
+		btMultiply = (Button) findViewById(R.id.multiply);
+		btMultiply.setOnClickListener(this);
+		
+		btDived = (Button) findViewById(R.id.dived);
+		btDived.setOnClickListener(this);
+		
+		btPercent = (Button) findViewById(R.id.percent);
+		btPercent.setOnClickListener(this);
+		
+		btSqrt = (Button) findViewById(R.id.sqrt);
+		btSqrt.setOnClickListener(this);
+		
+		btInverse = (Button) findViewById(R.id.inverse);
+		btInverse.setOnClickListener(this);
+		
+		btOpen = (Button) findViewById(R.id.open);
+		btOpen.setOnClickListener(this);
+		
+		btClose = (Button) findViewById(R.id.close);
+		btClose.setOnClickListener(this);
+		
+		btSin = (Button) findViewById(R.id.sin);
+		btSin.setOnClickListener(this);
+		
+		btCosin = (Button) findViewById(R.id.cosin);
+		btCosin.setOnClickListener(this);
+		
+		btTan = (Button) findViewById(R.id.tan);
+		btTan.setOnClickListener(this);
+		
+		btFactorial = (Button) findViewById(R.id.factorial);
+		btFactorial.setOnClickListener(this);
+		
+		btPow = (Button) findViewById(R.id.pow);
+		btPow.setOnClickListener(this);
+		
+		btReset = (Button) findViewById(R.id.reset);
+		btReset.setOnClickListener(this);
+		
+		btReset = (Button) findViewById(R.id.reset);
+		btReset.setOnClickListener(this);
+		
+		btClear = (Button) findViewById(R.id.clear);
+		btClear.setOnClickListener(this);	
+		
+		btAbout = (Button) findViewById(R.id.about);
+		btAbout.setOnClickListener(this);
+		
+		btHelp = (Button) findViewById(R.id.help);
+		btHelp.setOnClickListener(this);
+	}
 
 
 
