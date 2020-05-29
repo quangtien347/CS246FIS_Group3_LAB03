@@ -11,5 +11,17 @@ import static javafx.scene.input.KeyCode.R;
 
 public class CalculatorAbout extends Activity {
 
-	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.calculator_about);
+		Button btBack = (Button) findViewById(R.id.back);
+		btBack.setOnClickListener(new OnClickListener() {			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getApplicationContext(),Calculator.class);
+				startActivity(intent);
+			}
+		});
+	}
 }
