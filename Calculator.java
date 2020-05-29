@@ -222,6 +222,11 @@ public class Calculator extends Activity implements OnClickListener{
 	/*Add : cong, Minus :tru, Multiply: nhan, Dived : chia, Percent : phan tram, Sqrt: can, inverse : nghich dao,
 	 Submit : gui, Facetorial giai thua*/
 	
+	public void error(){
+		screenAns.setText("Math Error !");
+		textAns = textMath = screenTextMath = "";
+	}
+	
 	public void submit(String[] elementMath){
 		InfixToPostfix  ITP = new InfixToPostfix();
 		if (textMath.length()>0){
